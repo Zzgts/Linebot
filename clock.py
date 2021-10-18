@@ -30,7 +30,7 @@ def get():
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--no-sandbox")
     driver =webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH",None),chrome_options=options)
-    driver.get('https://www.twitch.tv/alenwu666')
+    driver.get('twitch streamer url')
     try :
         status=driver.find_element_by_xpath("//p[@class='sc-AxirZ gOlXkb']").get_attribute('innerHTML')
         if status=="LIVE"and enable==False:
@@ -43,7 +43,7 @@ def get():
 def nostream():
     global status,enable,title
     if status=="LIVE"and enable==False:
-        line_bot_api.push_message(to, TextSendMessage(text='streaming now \n '+title+'\n'+'啊丁開台了快點來掛台摟 https://www.twitch.tv/alenwu666 '))
+        line_bot_api.push_message(to, TextSendMessage(text='streaming now \n '+title+'\n'+'開台了快點來掛台摟  #twitch streamer url'))
         print("開台")
         enable=True
 
