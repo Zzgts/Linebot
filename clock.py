@@ -44,13 +44,13 @@ def nostream():
     global status,enable,title
     if status=="LIVE"and enable==False:
         line_bot_api.push_message(to, TextSendMessage(text='streaming now \n '+title+'\n'+'開台了快點來掛台摟  #twitch streamer url'))
-        print("開台")
+        #print("開台")
         enable=True
 
 
     elif status!="LIVE"and enable==True:
         line_bot_api.push_message(to, TextSendMessage(text='offline 休息摟 下..下次一定開到死'))
-        print("關台")
+        #print("關台")
         enable=False
 
 
